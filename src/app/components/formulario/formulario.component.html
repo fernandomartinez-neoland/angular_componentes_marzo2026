@@ -1,7 +1,38 @@
-<p>formulario works!</p>
-<form>
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" placeholder="Ingrese su nombre">
+<!-- 
+  ¡Hola! Este es el dibujo de nuestra pieza de Lego: el Formulario. 
+  Aquí pintamos el recuadro para escribir y el botón de enviar.
+-->
 
+<!-- Un simple texto para saber que el formulario cargó bien en pantalla -->
+<p>formulario works!</p>
+
+<!-- 
+  Aquí usamos la magia de Angular {{ }} para asomarnos y mostrar nuestra cajita local 'nombre()'.
+  Como estamos usando nuestra caja local (que cambia letra por letra), 
+  este título grandote (<h1>) irá cambiando en tiempo real según tecleas. 
+-->
+<h1>nombre en el FORMULARIO: {{ nombre() }}</h1>
+
+<!-- 
+  Esta etiqueta <form> es donde ocurre la acción del formulario.
+  (ngSubmit)="onSubmit()" significa: "Oye Angular, cuando alguien presione la tecla Enter 
+  o le dé click al botón de Enviar, por favor ve rápido al código y ejecuta la acción 'onSubmit()'".
+-->
+<form (ngSubmit)="onSubmit()">
+    
+    <!-- Una simple etiqueta de texto para que el usuario sepa qué escribir -->
+    <label for="nombre">Nombre</label>
+    
+    <!-- 
+      ¡Este es el recuadro blanco donde escribimos con el teclado (<input>)!
+      
+      1. [ngModel]="nombre()" hace que el recuadro siempre muestre lo que hay en nuestra caja 'nombre'.
+      2. (ngModelChange)="changeName($event)" significa: "Ojo, cada vez que el usuario teclee una 
+         letra nueva o la borre, corre a avisarle a la acción 'changeName' y pásale el nuevo texto ($event)".
+    -->
+    <input [ngModel]="nombre()" (ngModelChange)="changeName($event)" type="text" name="nombre"
+        placeholder="Ingrese su nombre">
+
+    <!-- Este es el botón mágico. Al darle click, activa la acción de Enviar del formulario -->
     <button type="submit">Enviar</button>
 </form>

@@ -1,2 +1,24 @@
+<!-- 
+  ¡Hola! Este es el dibujo de la pantalla principal (AppComponent). 
+  Todo lo que escribamos aquí será lo que se vea en el navegador web. 
+-->
+
+<!-- Una simple etiqueta de texto (<p>) que dice que la aplicación está funcionando -->
 <p>app works!</p>
+
+<!-- 
+  ¿Recuerdas que invitamos al componente "FormularioComponent" en nuestro código?
+  ¡Aquí es donde le decimos a Angular que lo dibuje en la pantalla! 
+  Esta etiqueta mágica toma todo el formulario y lo mete justo aquí.
+-->
 <app-formulario></app-formulario>
+
+<!-- 
+  Aquí vamos a mostrar el nombre que tenemos guardado en nuestra variable 'nombreApp'.
+  Las llaves dobles {{ }} son como una ventanita mágica que Angular usa 
+  para asomarse, ver el valor de nuestras variables y pintarlas en la pantalla.
+  
+  Como 'nombreApp' es un 'Signal' (una cajita de cristal especial), 
+  le ponemos paréntesis al final '()' para decirle a Angular: "¡Abre la caja y dame lo que hay dentro!"
+-->
+<p>Nombre desde APP: {{ nombreApp() }}</p>
